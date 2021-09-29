@@ -1,0 +1,37 @@
+{
+    "name": "ladumor/laravel-pwa",
+    "description": "this package used for the make pwa website.",
+    "type": "library",
+    "keywords": [
+        "laravel-pwa",
+        "pwa-laravel",
+        "laravel",
+        "php"
+    ],
+    "require": {
+        "php": ">=5.6",
+        "illuminate/support": ">=5.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shailesh Ladumor",
+            "email": "shaileshmladumor@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "Ladumor\\LaravelPwa\\": "src/"
+        }
+      },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "\\Ladumor\\LaravelPwa\\PwaServiceProvider"
+        ],
+        "aliases": {
+          "LaravelPwa": "Ladumor\\LaravelPwa\\LaravelPwa"
+        }
+      }
+    }
+}
