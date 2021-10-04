@@ -1,5 +1,9 @@
 # Laravel PWA
 
+## You can follow this video tutorial as well for installation.
+
+[<img src="https://img.youtube.com/vi/9H-T81KQPyo/0.jpg" width="250">](https://youtu.be/9H-T81KQPyo)
+
 ## Installation
 
 Install the package by the following command,
