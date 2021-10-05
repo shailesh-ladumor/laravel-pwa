@@ -27,7 +27,7 @@
     "extra": {
       "laravel": {
         "providers": [
-          "\\Ladumor\\LaravelPwa\\PwaServiceProvider"
+          "\\Ladumor\\LaravelPwa\\PWAServiceProvider"
         ],
         "aliases": {
           "LaravelPwa": "Ladumor\\LaravelPwa\\LaravelPwa"
