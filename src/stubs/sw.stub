@@ -1,27 +1,20 @@
-self.addEventListener("install", function (event) {
-    event.waitUntil(preLoad());
-});
-
-var filesToCache = [
-    '/',
-    '/offline.html'
-];
-
-var preLoad = function () {
+const preLoad = function () {
     return caches.open("offline").then(function (cache) {
         // caching index and important routes
         return cache.addAll(filesToCache);
     });
 };
 
-self.addEventListener("fetch", function (event) {
-    event.respondWith(checkResponse(event.request).catch(function () {
-        return returnFromCache(event.request);
-    }));
-    event.waitUntil(addToCache(event.request));
+self.addEventListener("install", function (event) {
+    event.waitUntil(preLoad());
 });
 
-var checkResponse = function (request) {
+const filesToCache = [
+    '/',
+    '/offline.html'
+];
+
+const checkResponse = function (request) {
     return new Promise(function (fulfill, reject) {
         fetch(request).then(function (response) {
             if (response.status !== 404) {
@@ -33,7 +26,7 @@ var checkResponse = function (request) {
     });
 };
 
-var addToCache = function (request) {
+const addToCache = function (request) {
     return caches.open("offline").then(function (cache) {
         return fetch(request).then(function (response) {
             return cache.put(request, response);
@@ -41,10 +34,10 @@ var addToCache = function (request) {
     });
 };
 
-var returnFromCache = function (request) {
+const returnFromCache = function (request) {
     return caches.open("offline").then(function (cache) {
         return cache.match(request).then(function (matching) {
-            if (!matching || matching.status == 404) {
+            if (!matching || matching.status === 404) {
                 return cache.match("offline.html");
             } else {
                 return matching;
@@ -52,3 +45,12 @@ var returnFromCache = function (request) {
         });
     });
 };
+
+self.addEventListener("fetch", function (event) {
+    event.respondWith(checkResponse(event.request).catch(function () {
+        return returnFromCache(event.request);
+    }));
+    if(!event.request.url.startsWith('http')){
+        event.waitUntil(addToCache(event.request));
+    }
+});
