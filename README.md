@@ -11,6 +11,9 @@
 
 [<img src="https://img.youtube.com/vi/9H-T81KQPyo/0.jpg" width="250">](https://youtu.be/9H-T81KQPyo)
 
+## Watch Other Lavavel tutorial here
+[<img src="https://img.youtube.com/vi/yMtsgBsqDQs/0.jpg" width="580">](https://www.youtube.com/channel/UCuCjzuwBqMqFdh0EU-UwQ-w?sub_confirmation=1))
+
 ## Installation
 
 Install the package by the following command,
