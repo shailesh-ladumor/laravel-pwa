@@ -50,12 +50,28 @@ Add following code in root blade file in before close the body.
 
     <script src="{{ asset('/sw.js') }}"></script>
     <script>
-        if (!navigator.serviceWorker.controller) {
-            navigator.serviceWorker.register("/sw.js").then(function (reg) {
-                console.log("Service worker has been registered for scope: " + reg.scope);
-            });
-        }
+       if ("serviceWorker" in navigator) {
+          // Register a service worker hosted at the root of the
+          // site using the default scope.
+          navigator.serviceWorker.register("/sw.js").then(
+          (registration) => {
+             console.log("Service worker registration succeeded:", registration);
+          },
+          (error) => {
+             console.error(`Service worker registration failed: ${error}`);
+          },
+        );
+      } else {
+         console.error("Service workers are not supported.");
+      }
     </script>
 
 ### License
 The MIT License (MIT). Please see [License](LICENSE.md) File for more information   
+
+
+## Note
+ PWA only works with https. so, you need to run either with  `php artisan serve` or create virtual host with https.
+ you can watch video for how to creat virtual host with https
+
+[<img src="https://img.youtube.com/vi/D5IqDcHyXSQ/0.jpg" width="550">](https://youtu.be/D5IqDcHyXSQ)
