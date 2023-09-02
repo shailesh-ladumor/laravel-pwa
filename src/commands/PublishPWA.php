@@ -22,7 +22,7 @@ class PublishPWA extends Command
     protected $description = 'Publish Service Worker|Offline HTMl|manifest file for PWA application.';
 
     public $composer;
-	
+
     /**
      * Create a new command instance.
      */
@@ -32,22 +32,29 @@ class PublishPWA extends Command
 
         $this->composer = app()['composer'];
     }
-	
+
     public function handle()
     {
         $publicDir = public_path();
-        
-        $manifestTemplate = file_get_contents(__DIR__.'/../stubs/manifest.stub');
-        $this->createFile($publicDir. DIRECTORY_SEPARATOR, 'manifest.json', $manifestTemplate);
+
+        $manifestTemplate = file_get_contents(__DIR__ . '/../stubs/manifest.stub');
+        $this->createFile($publicDir . DIRECTORY_SEPARATOR, 'manifest.json', $manifestTemplate);
         $this->info('manifest.json file is published.');
-        
-        $offlineHtmlTemplate = file_get_contents(__DIR__.'/../stubs/offline.stub');
-        $this->createFile($publicDir. DIRECTORY_SEPARATOR, 'offline.html', $offlineHtmlTemplate);
-        $this->info('offline.html file is published.');     
-        
-        $swTemplate = file_get_contents(__DIR__.'/../stubs/sw.stub');
-        $this->createFile($publicDir. DIRECTORY_SEPARATOR, 'sw.js', $swTemplate);
-        $this->info('sw.js (Service Worker) file is published.');     
+
+        $offlineHtmlTemplate = file_get_contents(__DIR__ . '/../stubs/offline.stub');
+        $this->createFile($publicDir . DIRECTORY_SEPARATOR, 'offline.html', $offlineHtmlTemplate);
+        $this->info('offline.html file is published.');
+
+        $swTemplate = file_get_contents(__DIR__ . '/../stubs/sw.stub');
+        $this->createFile($publicDir . DIRECTORY_SEPARATOR, 'sw.js', $swTemplate);
+        $this->info('sw.js (Service Worker) file is published.');
+
+        $logoPath = $publicDir . __DIR__ . 'logo.png';
+        if (!file_exists($logoPath)) {
+            if (copy(__DIR__ . '/../stubs/logo.png', $logoPath)) {
+                $this->info('Default logo published.');
+            }
+        }
 
         $this->info('Generating autoload files');
         $this->composer->dumpOptimized();
@@ -61,7 +68,7 @@ class PublishPWA extends Command
             mkdir($path, 0755, true);
         }
 
-        $path = $path.$fileName;
+        $path = $path . $fileName;
 
         file_put_contents($path, $contents);
     }
