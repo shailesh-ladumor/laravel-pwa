@@ -74,4 +74,4 @@ The MIT License (MIT). Please see [License](LICENSE.md) File for more informatio
  PWA only works with https. so, you need to run either with  `php artisan serve` or create virtual host with https.
  you can watch video for how to creat virtual host with https
 
-[<img src="https://img.youtube.com/vi/D5IqDcHyXSQ/0.jpg" width="250">](https://youtu.be/D5IqDcHyXSQ)
+[<img src="https://img.youtube.com/vi/D5IqDcHyXSQ/0.jpg" width="550">](https://youtu.be/D5IqDcHyXSQ)

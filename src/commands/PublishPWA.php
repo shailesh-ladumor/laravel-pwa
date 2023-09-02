@@ -49,7 +49,7 @@ class PublishPWA extends Command
         $this->createFile($publicDir . DIRECTORY_SEPARATOR, 'sw.js', $swTemplate);
         $this->info('sw.js (Service Worker) file is published.');
 
-        $logoPath = $publicDir . __DIR__ . 'logo.png';
+        $logoPath = $publicDir . DIRECTORY_SEPARATOR . 'logo.png';
         if (!file_exists($logoPath)) {
             if (copy(__DIR__ . '/../stubs/logo.png', $logoPath)) {
                 $this->info('Default logo published.');
