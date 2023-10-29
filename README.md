@@ -18,7 +18,8 @@
 
 Install the package by the following command,
 
-    composer require ladumor/laravel-pwa
+    composer require --dev ladumor/laravel-pwa
+
 
 ## Add Provider
 
