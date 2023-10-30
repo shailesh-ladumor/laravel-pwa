@@ -6,7 +6,6 @@
 [![PHP Version Require](http://poser.pugx.org/ladumor/laravel-pwa/require/php)](https://packagist.org/packages/ladumor/laravel-pwa)
 
 # Laravel PWA
-
 ## You can follow this video tutorial as well for installation.
 
 [<img src="https://img.youtube.com/vi/9H-T81KQPyo/0.jpg" width="250">](https://youtu.be/9H-T81KQPyo)
@@ -70,6 +69,7 @@ Add following code in root blade file in before close the body.
 ### License
 The MIT License (MIT). Please see [License](LICENSE.md) File for more information   
 
+<a href="https://www.buymeacoffee.com/ladumor" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Note
  PWA only works with https. so, you need to run either with  `php artisan serve` or create virtual host with https.
