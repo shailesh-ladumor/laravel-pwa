@@ -16,9 +16,10 @@
 
 ## Installation
 
-Install the package by the following command,
+Install the package by the following command, (try without `--dev` if you want to install it on production environment)
 
-    composer require ladumor/laravel-pwa
+    composer require --dev ladumor/laravel-pwa
+
 
 ## Add Provider
 
