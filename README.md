@@ -72,7 +72,7 @@ The MIT License (MIT). Please see [License](LICENSE.md) File for more informatio
 <a href="https://www.buymeacoffee.com/ladumor" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Note
- PWA only works with https. so, you need to run either with  `php artisan serve` or create virtual host with https.
- you can watch video for how to creat virtual host with https
+ PWA only works with https. so, you need to run either with  `php artisan serve` or create a virtual host with https.
+ you can watch the video for how to create a virtual host with HTTPS
 
 [<img src="https://img.youtube.com/vi/D5IqDcHyXSQ/0.jpg" width="550">](https://youtu.be/D5IqDcHyXSQ)
