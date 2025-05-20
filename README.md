@@ -66,6 +66,18 @@ Add following code in root blade file in before close the body.
       }
     </script>
 
+### Custom Install Button
+You can add custom install button in your blade file by using the following code.
+
+    <!-- Add this inside <body> -->
+    <button id="pwa-install-btn" style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 8px; z-index: 1000;">
+       Install App
+    </button>
+
+Also include the JS: (Add following code in root blade file in before close the body.)
+
+     <script src="{{ asset('js/pwa-install.js') }}"></script>
+
 ### License
 The MIT License (MIT). Please see [License](LICENSE.md) File for more information   
 

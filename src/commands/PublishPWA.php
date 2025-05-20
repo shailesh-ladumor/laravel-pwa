@@ -49,6 +49,11 @@ class PublishPWA extends Command
         $this->createFile($publicDir . DIRECTORY_SEPARATOR, 'sw.js', $swTemplate);
         $this->info('sw.js (Service Worker) file is published.');
 
+        $swTemplate = file_get_contents(__DIR__ . '/../stubs/pwa-install.stub');
+        $this->createFile($publicDir . DIRECTORY_SEPARATOR, 'pwa-install.js', $swTemplate);
+        $this->info('pwa-install.js (custom install button) file is published.');
+
+
         $logoPath = $publicDir . DIRECTORY_SEPARATOR . 'logo.png';
         if (!file_exists($logoPath)) {
             if (copy(__DIR__ . '/../stubs/logo.png', $logoPath)) {
