@@ -27,12 +27,17 @@ const checkResponse = function (request) {
 };
 
 const addToCache = function (request) {
+    // Only cache http(s) requests
+    if (!request.url.startsWith('http')) {
+        return Promise.resolve();
+    }
     return caches.open("offline").then(function (cache) {
         return fetch(request).then(function (response) {
             return cache.put(request, response);
         });
     });
 };
+
 
 const returnFromCache = function (request) {
     return caches.open("offline").then(function (cache) {
